@@ -4,33 +4,15 @@ import { useTools } from "./use-tools";
 
 export const useDrawingHandlers = () => {
     const { elements, dispatch } = useCanvasState();
-    const { toolHandler } = useTools();
+    const { activeTool, cursor, selectTool } = useTools();
 
-    const handleMouseDown = useCallback(
-        (e: React.MouseEvent) => {
-            toolHandler.handleMouseDown(e);
-        },
-        [toolHandler]
-    );
-
-    const handleMouseMove = useCallback(
-        (e: React.MouseEvent) => {
-            toolHandler.handleMouseMove(e);
-        },
-        [toolHandler]
-    );
-
-    const handleMouseUp = useCallback(
-        (e: React.MouseEvent) => {
-            toolHandler.handleMouseUp(e);
-        },
-        [toolHandler]
-    );
-
+    // You may implement your own handlers here using activeTool, cursor, selectTool
+    // For now, return them so you can use them in your components
     return {
-        handleMouseDown,
-        handleMouseMove,
-        handleMouseUp,
-        handleStartResizing: toolHandler.handleResizeStart,
+        activeTool,
+        cursor,
+        selectTool,
+        elements,
+        dispatch,
     };
 };
