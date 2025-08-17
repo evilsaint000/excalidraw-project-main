@@ -30,8 +30,6 @@ export type DrawnElementType = {
     y1: number;
     x2: number;
     y2: number;
-    // shape of the element to assist in rendering logic
-    shape: ShapeType;
     roughElement: Drawable | undefined;
     // shape: ShapesType;
     points?: Point[];
